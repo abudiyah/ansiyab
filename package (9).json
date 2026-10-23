@@ -1,0 +1,32 @@
+{
+  "name": "ansiyab",
+  "private": true,
+  "version": "0.1.0",
+  "description": "منصة انسياب: رصد الحركة المرورية والمخاطر البيئية ودعم القرار في أحياء الرياض",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @ansiyab/web",
+    "dev:server": "npm run dev -w @ansiyab/server",
+    "build": "npm run build -w @ansiyab/web",
+    "start": "npm run build && npm run start -w @ansiyab/server",
+    "probe": "tsx scripts/probe.ts",
+    "typecheck": "tsc -p packages/core && tsc -p apps/server && tsc -p apps/web",
+    "test": "vitest run",
+    "test:e2e": "node scripts/e2e.mjs",
+    "test:e2e:live": "node scripts/e2e-live.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "playwright": "^1.64.1",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.5"
+  }
+}

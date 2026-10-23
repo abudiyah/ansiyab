@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+data/runtime/
+test-results/
+*.log
+apps/web/public/vendor/
+data/runtime-*/

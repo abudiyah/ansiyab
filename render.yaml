@@ -1,0 +1,16 @@
+# نشر على Render من مستودع GitHub (Blueprint). المفاتيح تُضاف من لوحة Render ولا تُكتب هنا.
+# خطة مجانية للتجربة: تتوقف الخدمة بعد 15 دقيقة بلا زيارات وتفقد ملفاتها (القراءات والسجل).
+# للتشغيل الدائم: plan: starter مع قسم disk (انظر docs/DEPLOY.md).
+services:
+  - type: web
+    name: ansiyab
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: MODE
+        value: live
+      - key: TOMTOM_API_KEY
+        sync: false
+      - key: ADMIN_TOKEN
+        generateValue: true

@@ -1,0 +1,7 @@
+node_modules
+**/node_modules
+apps/web/dist
+data/runtime*
+test-results
+.env
+.git
